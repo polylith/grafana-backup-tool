@@ -19,3 +19,5 @@ done
 
 tar -czvf "${backup_dir}/${timestamp}.tar.gz" ${backup_dir}/{dashboards,datasources,folders,alert_channels}/${timestamp}
 rm -rf ${backup_dir}/{dashboards,datasources,folders,alert_channels}/${timestamp}
+
+python src/backup_to_s3.py "${backup_dir}/${timestamp}.tar.gz"

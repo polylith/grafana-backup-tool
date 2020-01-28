@@ -5,6 +5,7 @@ name = "pypi"
 
 [packages]
 requests = {extras = ["security"], version = "~=2.21"}
+boto3 = "*"
 
 [dev-packages]
 
