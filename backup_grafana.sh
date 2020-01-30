@@ -8,6 +8,8 @@ current_path=$(pwd)
 backup_dir="_OUTPUT_"
 timestamp=$(date +"%Y-%m-%dT%H-%M-%S")
 
+rm -rf "${backup_dir}"
+
 [ -d "${backup_dir}" ] || mkdir -p "${backup_dir}"
 
 for i in dashboards datasources folders alert_channels

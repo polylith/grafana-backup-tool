@@ -1,13 +1,13 @@
 #!/bin/bash
 
-echo "$1"
-restore_or_backup=$1
-restore_or_backup=${restore_or_backup:=backup}
+python src/wait_for_grafana_to_be_started.py
 
-if [ "$restore_or_backup" == "restore" ]; then
-  echo "Resotring grafana"
-  ./restore_grafana.sh "$2"
-else
+echo "Resotring grafana"
+./restore_grafana.sh
+
+while :
+do
   echo "Backing up grafana"
   ./backup_grafana.sh
-fi
+  sleep 18000
+done
