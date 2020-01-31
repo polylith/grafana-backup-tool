@@ -5,6 +5,9 @@ LABEL maintainer="ysde108@gmail.com"
 ADD requirements.txt requirements.txt
 RUN pip install -r requirements.txt
 
+RUN mkdir -p /secrets
+RUN chown 65534:65534 /secrets
+
 WORKDIR /app
 RUN chown 65534:65534 .
 COPY --chown=65534 . .

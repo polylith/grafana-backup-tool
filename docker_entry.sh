@@ -9,5 +9,5 @@ while :
 do
   echo "Backing up grafana"
   ./backup_grafana.sh
-  sleep 18000
+  sleep 300
 done
